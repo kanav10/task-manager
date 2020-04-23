@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskViewComponent } from './pages/task-view/task-view.component';
 
+import { HttpClientModule} from '@angular/common/http';
+import { ApiService } from './api.service';
+import { TaskService } from './task.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +16,11 @@ import { TaskViewComponent } from './pages/task-view/task-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [TaskService,
+              ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
